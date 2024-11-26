@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#menu {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+#menu h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Стили для навигационного меню */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-flex;
+    margin: 0px 15px;
+    flex-direction: row;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    color: #ffcc00;
+}
+
+/* Стили для активного пункта меню */
+nav ul li a.active {
+    background-color: #ffcc00;
+    color: #333;
+}
+
+.section {
+    display: none;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 80%;
+}
+
+#workouts.section {
+    width: 95%;
+}
+
+.section.active {
+    display: block;
+}
+
+#queries.section.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-header h2 {
+    margin: 0;
+}
+
+button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #e6b300;
+    color: #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+input,
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus,
+select:focus {
+    border-color: #ffcc00;
+    outline: none;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #ffcc00;
+    color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+#pagination,
+#workout-pagination,
+#trainer-pagination,
+#membership-pagination,
+#booking-pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+#pagination button,
+#workout-pagination button,
+#trainer-pagination button,
+#membership-pagination button,
+#booking-pagination button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#pagination button:hover,
+#workout-pagination button:hover,
+#trainer-pagination button:hover,
+#membership-pagination button:hover,
+#booking-pagination button:hover {
+    background-color: #e6b300;
+    color: #fff;
+}
+
+#query-results {
+    margin-top: 20px;
+}
+
+#query-results table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#query-results th,
+#query-results td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#query-results th {
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+}
+
+#query-results tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#query-results tr:hover {
+    background-color: #f1f1f1;
+}
+
+.action-table {
+    display: inline-flex;
+    gap: 10px;
+    align-content: stretch;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: -webkit-fill-available;
+}
+
+button {
+    background-color: #00ff11;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.deleteBooking,
+button.deleteMembership,
+button.deleteTrainer,
+button.deleteUser,
+button.deleteWorkout {
+    background-color: #ff0000;
+}
+
+button.editBooking,
+button.editMembership,
+button.editTrainer,
+button.editUser,
+button.editWorkout {
+    background-color: #ffcc00;
+}
+
+button:hover {
+    background-color: #a5a4a0;
+    color: #fff;
+}
+
+button[type="button"] {
+    background-color: #ccc;
+    color: #333;
+}
+
+button[type="button"]:hover {
+    background-color: #bbb;
+    color: #fff;
+}

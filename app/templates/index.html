@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Gym</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', path='/images/muscle.png') }}" type="image/x-icon">
+</head>
+
+<body>
+    <div id="menu">
+        <h1>Fitness Gym Management</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="users-menu">Клиенты</a></li>
+                <li><a href="#" id="workouts-menu">Тренировки</a></li>
+                <li><a href="#" id="trainers-menu">Тренеры</a></li>
+                <li><a href="#" id="memberships-menu">Членство</a></li>
+                <li><a href="#" id="bookings-menu">Записи</a></li>
+                <li><a href="#" id="queries-menu">Запросы</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="app">
+        <div id="users" class="section">
+            <div class="form-header">
+                <h2>Клиенты</h2>
+                <button id="showUserForm">Добавить клиента</button>
+            </div>
+            <div id="user-form" style="display: none;">
+                <form id="user-create-form">
+                    <input type="text" id="user-name" placeholder="Имя" required>
+                    <input type="email" id="user-email" placeholder="Email" required>
+                    <input type="text" id="user-phone" placeholder="Телефон" required>
+                    <select id="user-membership-id" required>
+                        <option value="" disabled selected>Выберите членство</option>
+                    </select>
+                    <button type="submit">Создать карточку клиента</button>
+                    <button type="button" id="closeUserForm">Закрыть</button>
+                </form>
+            </div>
+            <table id="user-list">
+                <thead>
+                    <!-- Заголовки будут добавлены динамически -->
+                </thead>
+                <tbody>
+                    <!-- Данные будут добавлены сюда динамически -->
+                </tbody>
+            </table>
+            <div id="pagination">
+                <button id="prev">Предыдущая</button>
+                <span id="page-info"></span>
+                <button id="next">Следующая</button>
+            </div>
+        </div>
+
+        <div id="workouts" class="section">
+            <div class="form-header">
+                <h2>Тренировки</h2>
+                <button id="showWorkoutForm">Добавить тренировку</button>
+            </div>
+            <div id="workout-form" style="display: none;">
+                <form id="workout-create-form">
+                    <input type="text" id="workout-name" placeholder="Название" required>
+                    <input type="text" id="workout-description" placeholder="Описание" required>
+                    <select id="workout-trainer-id" required>
+                        <option value="" disabled selected>Выберите тренера</option>
+                    </select>
+                    <input type="date" id="workout-date" placeholder="Дата" required>
+                    <input type="time" id="workout-time" placeholder="Время" required>
+                    <input type="number" id="workout-capacity" placeholder="Кол-во мест" required>
+                    <button type="submit">Создать тренировку</button>
+                    <button type="button" id="closeWorkoutForm">Закрыть</button>
+                </form>
+            </div>
+            <table id="workout-list">
+                <thead>
+                    <!-- Заголовки будут добавлены динамически -->
+                </thead>
+                <tbody>
+                    <!-- Данные будут добавлены сюда динамически -->
+                </tbody>
+            </table>
+            <div id="workout-pagination">
+                <button id="workout-prev">Предыдущая</button>
+                <span id="workout-page-info"></span>
+                <button id="workout-next">Следующая</button>
+            </div>
+        </div>
+
+        <div id="trainers" class="section">
+            <div class="form-header">
+                <h2>Тренеры</h2>
+                <button id="showTrainerForm">Добавить тренера</button>
+            </div>
+            <div id="trainer-form" style="display: none;">
+                <form id="trainer-create-form">
+                    <input type="text" id="trainer-name" placeholder="Имя" required>
+                    <input type="text" id="trainer-specialization" placeholder="Специализация" required>
+                    <button type="submit">Создать тренера</button>
+                    <button type="button" id="closeTrainerForm">Закрыть</button>
+                </form>
+            </div>
+            <table id="trainer-list">
+                <thead>
+                    <!-- Заголовки будут добавлены динамически -->
+                </thead>
+                <tbody>
+                    <!-- Данные будут добавлены сюда динамически -->
+                </tbody>
+            </table>
+            <div id="trainer-pagination">
+                <button id="trainer-prev">Предыдущая</button>
+                <span id="trainer-page-info"></span>
+                <button id="trainer-next">Следующая</button>
+            </div>
+        </div>
+
+        <div id="memberships" class="section">
+            <div class="form-header">
+                <h2>Членство</h2>
+                <button id="showMembershipForm">Добавить членство</button>
+            </div>
+            <div id="membership-form" style="display: none;">
+                <form id="membership-create-form">
+                    <input type="text" id="membership-type" placeholder="Тип членства" required>
+                    <input type="date" id="membership-start-date" placeholder="Дата начала" required>
+                    <input type="date" id="membership-end-date" placeholder="Дата окончания" required>
+                    <button type="submit">Создать членство</button>
+                    <button type="button" id="closeMembershipForm">Закрыть</button>
+                </form>
+            </div>
+            <table id="membership-list">
+                <thead>
+                    <!-- Заголовки будут добавлены динамически -->
+                </thead>
+                <tbody>
+                    <!-- Данные будут добавлены сюда динамически -->
+                </tbody>
+            </table>
+            <div id="membership-pagination">
+                <button id="membership-prev">Предыдущая</button>
+                <span id="membership-page-info"></span>
+                <button id="membership-next">Следующая</button>
+            </div>
+        </div>
+
+        <div id="bookings" class="section">
+            <div class="form-header">
+                <h2>Записи</h2>
+                <button id="showBookingForm">Добавить запись</button>
+            </div>
+            <div id="booking-form" style="display: none;">
+                <form id="booking-create-form">
+                    <select id="booking-user-id" required>
+                        <option value="" disabled selected>Выберите пользователя</option>
+                    </select>
+                    <select id="booking-workout-id" required>
+                        <option value="" disabled selected>Выберите тренировку</option>
+                    </select>
+                    <button type="submit">Создать запись</button>
+                    <button type="button" id="closeBookingForm">Закрыть</button>
+                </form>
+            </div>
+            <table id="booking-list">
+                <thead>
+                    <!-- Заголовки будут добавлены динамически -->
+                </thead>
+                <tbody>
+                    <!-- Данные будут добавлены сюда динамически -->
+                </tbody>
+            </table>
+            <div id="booking-pagination">
+                <button id="booking-prev">Предыдущая</button>
+                <span id="booking-page-info"></span>
+                <button id="booking-next">Следующая</button>
+            </div>
+        </div>
+
+        <div id="queries" class="section">
+            <h2>Запросы</h2>
+            <!-- <button id="btn1">Получить тренировки по тренеру</button>
+            <button id="btn2">Получить бронирования по пользователю</button>
+            <button id="btn3">Получить тренировки по дате</button> -->
+            <button id="btn4">Получить самую популярную тренировку</button>
+            <button id="btn5">Получить тренеров с наибольшим количеством тренировок</button>
+            <button id="btn6">Получить пользователей с истекающим членством</button>
+            <div id="query-results"></div>
+        </div>
+    </div>
+    <script type="module" src="{{ url_for('static', path='/js/script.js') }}"></script>
+</body>
+
+</html>
